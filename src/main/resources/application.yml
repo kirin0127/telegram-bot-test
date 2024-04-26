@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: telegram-bot-test
+
+telegram:
+  bot-infos:
+    - name: jeff_test01_bot
+      token: {bot_token}
+    - name: jeff_test02_bot
+      token: {bot_token}
+  chat-infos:
+    - name: Jeff & jeff-test
+      chat-id: {curl https://api.telegram.org/bot{bot_token}/getUpdates}
+    - name: Jeff & jeff-test 2
+      chat-id: {curl https://api.telegram.org/bot{bot_token}/getUpdates}
