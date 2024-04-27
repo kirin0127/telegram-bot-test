@@ -38,7 +38,6 @@ public class RateLimiterAspect {
                 rateLimited.limitForPeriod(),
                 rateLimited.timeoutDuration()
         ));
-        map.putIfAbsent(rateLimited.name(), rateLimiter);
         CheckedRunnable call = RateLimiter.decorateCheckedRunnable(rateLimiter, joinPoint::proceed);
         Try.run(call).onFailure(throwable -> log.info("Wait before call it again :)"));
     }
